@@ -1,7 +1,7 @@
 import re
 from datetime import datetime, timedelta
 import fiscalyear
-#Global Stuff make changes
+#Global Stuff make change
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
