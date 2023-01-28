@@ -68,7 +68,7 @@ headers = {
 if __name__=='__main__':
     fiscalyear.setup_fiscal_calendar(start_month=4)
     s = requests.Session()
-    s.get("https://www.nseindia.com/companies-listing/corporate-filings-governance?symbol=ICICBANK&tabIndex=equity", headers=headers, timeout=5)
+    s.get("https://www.nseindia.com/companies-listing/corporate-filings-governance?symbol=ICICBANK&tabIndex=equity", headers=headers, timeout=20)
     
     if glob.glob("companies.pickle"):
         with open('companies.pickle', 'rb') as f:
