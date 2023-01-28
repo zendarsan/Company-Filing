@@ -74,9 +74,11 @@ if __name__=='__main__':
         with open('companies.pickle', 'rb') as f:
             companies_data = pickle.load(f)
     else:
+        print("No company list")
         symbols = pd.read_csv("companies.csv")
         companies_data = {}
         for symbol in symbols['SYMBOL']:
+            print(f"Getting {symbol}", end='\r')
             if symbol in companies_data:
                 continue
             params = {
