@@ -100,6 +100,7 @@ if __name__=='__main__':
     companies.loc[companies[(companies[cols[1]]>=25)].index, 'pattern'] = 'Concentrated'
 
     for company in companies_data:
+        print("Starting Company ", company)
         report_list = s.get('https://www.nseindia.com/api/corporate-governance-master', params={'index': 'equities','symbol': company,}, headers=headers, timeout=15) #Gets list of reports to pull RecID
         report_list = json.loads(report_list.content)
         qtr_reports = {}
