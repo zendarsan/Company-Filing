@@ -77,7 +77,7 @@ if __name__=='__main__':
         symbols = pd.read_csv("companies.csv")
         companies_data = {}
         for symbol in symbols['SYMBOL']:
-            if symbol in data:
+            if symbol in companies_data:
                 continue
             params = {
             'symbol': symbol,
@@ -90,7 +90,7 @@ if __name__=='__main__':
                 continue
             companies_data[symbol] = json.loads(response.content)
         with open('companies.pickle', 'wb') as f:
-            pickle.dump(data, f)
+            pickle.dump(companies_data, f)
 
     companies = pd.read_csv('shareholding.csv')
     companies['pattern'] = 'Concentrated'
